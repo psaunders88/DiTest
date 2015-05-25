@@ -1,0 +1,17 @@
+parameters:
+    psaunders_manager: PSaunders88\DiTest\Manager\Manager
+    psaunders_math_adder: PSaunders88\DiTest\Math\Adder
+    psaunders_math_substractor: PSaunders88\DiTest\Math\Subtractor
+        
+services:
+    psaunders_math_adder:
+        class: %psaunders_math_adder%
+        
+    psaunders_math_substractor:
+        class: %psaunders_math_substractor%
+        
+    psaunders_manager:
+        class: %psaunders_manager%
+        arguments:
+            - @psaunders_math_adder
+            - @psaunders_math_substractor
